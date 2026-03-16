@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Sora", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #1C6CFF;
+  --color-primary-hover: #1555CC;
+  --color-secondary: #0B1A3A;
+  --color-ice: #B7D4FF;
+  --color-neutral-light: #F5F7FB;
+  --color-neutral-dark: #1A1A1A;
+
+  --color-glow: rgba(28, 108, 255, 0.5);
+
+  --shadow-glow: 0 0 20px rgba(28, 108, 255, 0.3), 0 0 40px rgba(28, 108, 255, 0.1);
+  --shadow-glass: 0 8px 32px 0 rgba(11, 26, 58, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-light text-secondary font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-glass;
+  }
+  .glass-dark {
+    @apply bg-secondary/80 backdrop-blur-lg border border-white/10 shadow-glass text-white;
+  }
+  .text-glow {
+    text-shadow: 0 0 10px rgba(28, 108, 255, 0.5);
+  }
+}
